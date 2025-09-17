@@ -124,13 +124,13 @@ Fixed	Fixed::operator/(const Fixed &other) const
 Fixed	Fixed::operator++(int)
 {
 	Fixed	temp(*this);
-	this->value += 1 ;
+	this->value += 256;
 	return (temp);
 }
 
 Fixed	&Fixed::operator++()
 {
-	this->value += 1;
+	this->value += 256;
 	return (*this);
 }
 

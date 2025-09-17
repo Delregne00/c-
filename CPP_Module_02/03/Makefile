@@ -1,7 +1,7 @@
 # Variables del compilador
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-TARGET = Fixed
+TARGET = bsp
 SOURCES = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 HEADERS = Fixed.hpp Fixed.hpp

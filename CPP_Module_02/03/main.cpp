@@ -105,7 +105,7 @@ int main()
 		std::cout << std::endl;
 	}
 
-	std::cout << "--- CASO 7: Tu ejemplo original ---" << std::endl;
+	std::cout << "--- CASO 7: DENTRO   ---" << std::endl;
 	{
 		Point p1(0, 0);
 		Point p2(5, 0);
@@ -121,7 +121,6 @@ int main()
 		std::cout << std::endl;
 	}
 
-	std::cout << "--- CASO 8: Triángulo pequeño ---" << std::endl;
 	{
 		Point p1(0, 0);
 		Point p2(1, 0);
@@ -136,8 +135,6 @@ int main()
 		std::cout << "Esperado: DENTRO" << std::endl;
 		std::cout << std::endl;
 	}
-
-	std::cout << "=== FIN DE PRUEBAS ===" << std::endl;
 
 	return 0;
 }

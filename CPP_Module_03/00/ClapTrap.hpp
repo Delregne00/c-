@@ -6,9 +6,9 @@
 class ClapTrap{
 	private:
 		std::string	name;
-		int	hit_points;
-		int	energy_points;
-		int	attack_damage;
+		int	hitPoints;
+		int	energyPoints;
+		int	attackDamage;
 
 	public:
 		ClapTrap();
@@ -27,6 +27,8 @@ class ClapTrap{
 		int 			getEnergyPoints() const;
 		int 			getAttackDamage() const;
 };
+
+std:: ostream& operator<<(std::ostream& os, const ClapTrap& fixed);
 
 #endif
 

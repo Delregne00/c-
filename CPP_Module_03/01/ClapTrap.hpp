@@ -6,9 +6,9 @@
 class ClapTrap{
 	protected:
 		std::string	name;
-		int	hit_points;
-		int	energy_points;
-		int	attack_damage;
+		int	hitPoints;
+		int	energyPoints;
+		int	attackDamage;
 
 	public:
 		ClapTrap();
@@ -17,16 +17,18 @@ class ClapTrap{
 		ClapTrap &operator=(const ClapTrap &other);
 		~ClapTrap();
 
-		void	setAttackDamage(unsigned int amount);
-		void	attack(const std::string &target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
+		virtual void	attack(const std::string &target);
+		void			setAttackDamage(unsigned int amount);
+		void			takeDamage(unsigned int amount);
+		void			beRepaired(unsigned int amount);
 
-		std::string 	getName() const;
-		int 			getHitPoints() const;
-		int 			getEnergyPoints() const;
-		int 			getAttackDamage() const;
+		std::string		getName() const;
+		int				getHitPoints() const;
+		int				getEnergyPoints() const;
+		int				getAttackDamage() const;
 };
+
+std:: ostream& operator<<(std::ostream& os, const ClapTrap& fixed);
 
 #endif
 
