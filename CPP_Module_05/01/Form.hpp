@@ -2,12 +2,16 @@
 #define FORM_HPP
 
 #include <ostream>
+#include "Exceptions.hpp"
+#include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form{
 private:
     const std::string   _name;
-    const int           _gradeToSing; 
-    const int           _gradeToExecute; 
+    const int           _gradeToSing;
+    const int           _gradeToExecute;
     bool                _isSigned;
 
 public:
@@ -17,13 +21,14 @@ public:
     Form(const std::string &name, const int gardeToSing, const int gardeToExecute);
     ~Form();
 
-    std::string getName();
-    int         getGradeToSign();
-    int         getGradeToExecute();
-    bool        getIsSigned();
+    std::string getName() const;
+    int         getGradeToSign() const;
+    int         getGradeToExecute() const;
+    bool        getIsSigned() const;
 
-    bool    beSigned(const Form &form);
+    bool    beSigned(const Bureaucrat &bureaucrat);
 };
 
+std::ostream &operator<<(std::ostream& os, const Form& fixed);
 
 #endif

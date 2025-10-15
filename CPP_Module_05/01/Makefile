@@ -1,9 +1,9 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-TARGET = Bureaucrat
-SOURCES = main.cpp Bureaucrat.cpp 
+TARGET = form
+SOURCES = main.cpp Bureaucrat.cpp Form.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
-HEADERS = Bureaucrat.hpp
+HEADERS = Bureaucrat.hpp Exception.hpp Form.hpp
 
 all: $(TARGET)
 

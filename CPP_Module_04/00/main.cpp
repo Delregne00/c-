@@ -12,7 +12,6 @@ int main()
 
 	std::cout << "\n=== ANIMAL ===" << std::endl;
 	std::cout << "Animal object type : "<< animal->getType() << std::endl;
-	animal->makeSound();
 
 	std::cout << "\n=== DOG ===" << std::endl;
 	std::cout << "Dog object type : "<< dog->getType() << std::endl;

@@ -13,7 +13,6 @@ int main()
 	dog->makeSound();
 	cat->makeSound();
 
-	delete	dog;
 	delete	cat;
 
 

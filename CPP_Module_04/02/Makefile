@@ -1,6 +1,6 @@
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-TARGET = Animal
+TARGET = AAnimal
 SOURCES = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 HEADERS = Animal.hpp Cat.hpp Dog.hpp Brain.hpp

@@ -10,6 +10,8 @@ class Character : public ICharacter{
 private:
 	std::string _name;
 	AMateria	*_inventory[4];
+	AMateria	*_dropped[100];
+	int			drop_index;
 
 public:
 	Character();
@@ -22,6 +24,8 @@ public:
 	virtual void equip(AMateria *m);
 	virtual void unequip(int idx);
 	virtual void use(int idx, ICharacter &target);
+
+	void	deletedrop();
 };
 
 #endif
