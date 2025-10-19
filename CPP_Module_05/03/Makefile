@@ -1,15 +1,18 @@
 # Compiler and flags
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SANITIZE = -fsanitize=address
 
 # Target executable
-TARGET = form
+TARGET = Intern
 
 # Source files
 SOURCES = main.cpp \
           Bureaucrat.cpp \
-          Form.cpp
+          AForm.cpp \
+          ShrubberyCreationForm.cpp \
+          RobotomyRequestForm.cpp \
+          PresidentialPardonForm.cpp \
+          Intern.cpp
 
 # Object files
 OBJECTS = $(SOURCES:.cpp=.o)
@@ -17,7 +20,11 @@ OBJECTS = $(SOURCES:.cpp=.o)
 # Header files
 HEADERS = Bureaucrat.hpp \
           Exceptions.hpp \
-          Form.hpp
+          AForm.hpp \
+          ShrubberyCreationForm.hpp \
+          RobotomyRequestForm.hpp \
+          PresidentialPardonForm.hpp \
+          Intern.hpp
 
 # Default target
 all: $(TARGET)
@@ -50,4 +57,4 @@ debug: re
 	@echo "✓ Built with address sanitizer"
 
 # Phony targets
-.PHONY: all clean fclean re debug
+.PHONY: all clean fclean re

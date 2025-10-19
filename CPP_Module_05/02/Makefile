@@ -1,27 +1,59 @@
+# Compiler and flags
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-TARGET = AForm
-SOURCES = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
-OBJECTS = $(SOURCES:.cpp=.o)
-HEADERS = Bureaucrat.hpp Exception.hpp AForm.hpp ShrubberyCreationForm.hpp
+SANITIZE = -fsanitize=address
 
+# Target executable
+TARGET = forms
+
+# Source files
+SOURCES = main.cpp \
+          Bureaucrat.cpp \
+          AForm.cpp \
+          ShrubberyCreationForm.cpp \
+          RobotomyRequestForm.cpp \
+          PresidentialPardonForm.cpp
+
+# Object files
+OBJECTS = $(SOURCES:.cpp=.o)
+
+# Header files
+HEADERS = Bureaucrat.hpp \
+          Exceptions.hpp \
+          AForm.hpp \
+          ShrubberyCreationForm.hpp \
+          RobotomyRequestForm.hpp \
+          PresidentialPardonForm.hpp
+
+# Default target
 all: $(TARGET)
 
-$(TARGET): $(OBJECTS) Makefile
-	$(CXX) $(OBJECTS) -o $(TARGET)
-	@echo "Exe '$(TARGET)' is created"
+# Link object files to create executable
+$(TARGET): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $(OBJECTS) -o $(TARGET)
+	@echo "✓ Executable '$(TARGET)' created successfully"
 
+# Compile source files to object files
 %.o: %.cpp $(HEADERS)
-		$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
+# Clean object files
 clean:
-		rm -f $(OBJECTS)
-		@echo "Objects are destroyed"
+	rm -f $(OBJECTS)
+	@echo "✓ Object files removed"
 
-fclean:
-		rm -f $(TARGET)
-		@echo "EXE is destroyed"
+# Clean executable
+fclean: clean
+	rm -f $(TARGET)
+	@echo "✓ Executable removed"
 
+# Rebuild everything
 re: fclean all
 
-.PHONY: all clean fclean
+# Build with sanitizer (for debugging)
+debug: CXXFLAGS += $(SANITIZE)
+debug: re
+	@echo "✓ Built with address sanitizer"
+
+# Phony targets
+.PHONY: all clean fclean re debug

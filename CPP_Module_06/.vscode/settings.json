@@ -1,5 +1,6 @@
 {
 	"files.associations": {
+		"cfloat": "cpp",
 		"cctype": "cpp",
 		"clocale": "cpp",
 		"cmath": "cpp",
@@ -44,7 +45,6 @@
 		"ranges": "cpp",
 		"stdexcept": "cpp",
 		"streambuf": "cpp",
-		"typeinfo": "cpp",
-		"fstream": "cpp"
+		"typeinfo": "cpp"
 	}
 }
