@@ -3,10 +3,10 @@
 int main(){
     try {
         Bureaucrat b1("Andreu", 34);
-        Form    f1("DNI", -30, 50);
+        Form    f1("DNI", 30, 50);
 
-        //for (int i = 0; i < 10; i++)
-        //    b1.gradeTooHight();
+          for (int i = 0; i < 10; i++)
+              b1.gradeTooHight();
 
         b1.signForm(f1);
 

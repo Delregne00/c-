@@ -1,15 +1,16 @@
 #include "ScalarConverter.hpp"
 
+#include <iostream>
+#include <cstdlib>
 
+int main(int argc, char **argv){
+	if (argc != 2){
+		std::cerr << "Error: Invalid number of arguments" << std::endl;
+		std::cerr << "Usage: ./converter <value>" << std::endl;
+		std::cerr << "Accepted types: char, int, float, double" << std::endl;
+		return 1;
+	}
 
-int main(){
-
-	ScalarConverter::convert("+inf");
-	ScalarConverter::convert("'c'");
-	ScalarConverter::convert("700");
-	ScalarConverter::convert("67.00349666666666666f");
-	ScalarConverter::convert("nanf");
-	ScalarConverter::convert("123.123123");
+	ScalarConverter::convert(argv[1]);
 	return 0;
-
 }

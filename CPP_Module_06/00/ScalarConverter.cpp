@@ -34,7 +34,7 @@ bool ScalarConverter::isFloat(const std::string &str){
 	bool findPoint = false;
 	bool findSign = false;
 
-	for (int i = 0; str[i]; i++){
+	for (size_t i = 0; str[i]; i++){
 		if ((str[i] == '+' || str[i] == '-') && !findSign){
 			i++;
 			findSign = true;
@@ -132,7 +132,7 @@ void ScalarConverter::convertFromDouble(double d){
 }
 
 void convertPseudoLiterals(const std::string &literal){
-	double d;
+	double d = 0.0;
 	if (literal == "nan" || literal == "nanf")
 		d = std::numeric_limits<double>::quiet_NaN();
 	else if (literal == "inf" || literal == "+inf" ||
@@ -149,35 +149,16 @@ void convertPseudoLiterals(const std::string &literal){
 	std::cout << "double: " << d << std::endl;
 }
 
-
-#define RESET   "\033[0m"
-#define RED     "\033[31m"
-#define GREEN   "\033[32m"
-#define YELLOW  "\033[33m"
-#define BLUE    "\033[34m"
-#define MAGENTA "\033[35m"
-
 void ScalarConverter::convert(const std::string &literal){
 
 	if (checkPseudoLiterals(literal))
-	{
-		std::cout << RED << "pseudo literal" << RESET << std::endl;
 		convertPseudoLiterals(literal);
-	}
-	if (isChar(literal)){
-		std::cout << GREEN << "is char" << RESET << std::endl;
+	if (isChar(literal))
 		convertFromChar(literal[1]);
-	}
-	else if (isInt(literal)){
-		std::cout << YELLOW << "is int" << RESET << std::endl;
+	else if (isInt(literal))
 		convertFromInt(atoi(literal.c_str()));
-	}
-	else if (isFloat(literal)){
-		std::cout << BLUE << "is Float" << RESET << std::endl;
+	else if (isFloat(literal))
 		convertFromFloat(strtof(literal.c_str(), NULL));
-	}
 	else if (isDouble(literal)){
-		std::cout << MAGENTA << "is Double" << RESET << std::endl;
 		convertFromDouble(atof(literal.c_str()));
-	}
-}
+	}}

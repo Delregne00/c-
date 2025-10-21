@@ -58,7 +58,7 @@ bool    AForm::beSigned(const Bureaucrat &bureaucrat){
 
 bool    AForm::beExecute(const Bureaucrat &bureaucrat){
 	if (!getIsSigned())
-		throw	asdasd();
+		throw	NotSignedException();
 	if (bureaucrat.getGrade() > _gradeToExecute)
 		throw GradeTooLowException();
 	this->_isExecuted = true;

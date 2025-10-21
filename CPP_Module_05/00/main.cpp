@@ -9,7 +9,8 @@ int main(){
         Bureaucrat b5;
 
         b5 = b4;
-        
+
+        b4.gradeTooLow();
         b4.gradeTooLow();
 
         std::cout << b1 << std::endl;
@@ -17,10 +18,10 @@ int main(){
         std::cout << b3 << std::endl;
         std::cout << b4 << std::endl;
         std::cout << b5 << std::endl;
-        
+
     } catch (const std::exception& e) {
         std::cout << "Error: " << e.what() << std::endl;
     }
-    
+
     return 0;
 }
