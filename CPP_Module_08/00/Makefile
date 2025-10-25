@@ -4,7 +4,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SANITIZE = -fsanitize=address
 
 # Target executable
-TARGET = whatever
+TARGET = easyFind
 # Source files
 SOURCES = main.cpp
 
@@ -12,7 +12,7 @@ SOURCES = main.cpp
 OBJECTS = $(SOURCES:.cpp=.o)
 
 # Header files
-HEADERS = whatever.hpp
+HEADERS = easyFind.hpp
 
 # Default target
 all: $(TARGET)

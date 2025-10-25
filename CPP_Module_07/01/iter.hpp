@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <array>
 
 template <typename T, typename Func>
 void iter(T *ptr, size_t size, Func func){
